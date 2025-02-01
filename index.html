@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
@@ -10,12 +9,71 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
     <title>STREAMZY - Watch Movies & TV Shows For free</title>
-<script type='text/javascript' src='//pl25682453.profitablecpmrate.com/fc/73/08/fc730846d42dcb0bd985eed7f1a24670.js'></script>
-<script type='text/javascript' src='//pl25742187.profitablecpmrate.com/7f/88/c2/7f88c26da0fd99b05bbdf259f8961543.js'></script>
+    <style>
+      /* Popup Styling */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .popup {
+        background-color: #141414;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+      .popup h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #e50914; /* Netflix Red */
+      }
+      .popup p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: #fff;
+      }
+      .popup a {
+        display: inline-block;
+        background-color: #e50914;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      .popup a:hover {
+        background-color: #f40612;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
+    <!-- Popup HTML -->
+    <div class="popup-overlay">
+      <div class="popup">
+        <h2>JOIN STREAMZY ANNOUNCEMENT CHANNELS</h2>
+        <p>STREAMING WEBSITE WITH NO ANNOYING ADS</p>
+        <a href="https://t.me/streamzy" target="_blank">Join Telegram Channel</a>
+      </div>
+    </div>
+
+    <script>
+      // Optional: Add JavaScript to close the popup after a few seconds
+      setTimeout(() => {
+        document.querySelector('.popup-overlay').style.display = 'none';
+      }, 10000); // Popup akan hilang setelah 10 detik
+    </script>
   </body>
 </html>
