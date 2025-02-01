@@ -54,6 +54,24 @@
       .popup a:hover {
         background-color: #f40612;
       }
+
+      /* Banner Styling */
+      .banner-container {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 9999;
+      }
+      .banner-container img {
+        width: 500px; /* Lebar disesuaikan dengan gambar yang dimaksud */
+        height: 80px; /* Tinggi disesuaikan agar tidak meninggi */
+        object-fit: cover; /* Memastikan gambar tidak pecah atau terdistorsi */
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -69,11 +87,21 @@
       </div>
     </div>
 
+    <!-- Banner Images -->
+    <div class="banner-container">
+      <a href="https://t.me/streamzy" target="_blank">
+        <img src="https://pomf2.lain.la/f/qo2cgyup.gif" alt="Banner 1">
+      </a>
+      <a href="https://t.me/streamzy" target="_blank">
+        <img src="https://pomf2.lain.la/f/qo2cgyup.gif" alt="Banner 2">
+      </a>
+    </div>
+
     <script>
       // Optional: Add JavaScript to close the popup after a few seconds
       setTimeout(() => {
         document.querySelector('.popup-overlay').style.display = 'none';
-      }, 4000); // Popup akan hilang setelah 10 detik
+      }, 4000); // Popup akan hilang setelah 10 detik 
     </script>
   </body>
 </html>
