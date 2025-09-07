@@ -40,7 +40,7 @@ export default function Layout() {
               </div>
               <div className="hidden md:flex items-center gap-4">
                 <a 
-                  href="https://t.me/streamzy" 
+                  href="https://www.whatsapp.com/channel/0029Vb6BA0LDDmFPwX1crg2h" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center justify-center h-10 w-10 rounded-lg hover:text-red-600 hover:bg-gray-800/50 transition-colors"
@@ -48,7 +48,7 @@ export default function Layout() {
                   <MessageCircle size={20} />
                 </a>
                 <a 
-                  href="https://t.me/streamzy" 
+                  href="https://www.whatsapp.com/channel/0029Vb6BA0LDDmFPwX1crg2h" 
                   className="flex items-center justify-center h-10 w-10 rounded-lg hover:text-red-600 hover:bg-gray-800/50 transition-colors"
                 >
                   <Mail size={20} />
@@ -106,7 +106,7 @@ export default function Layout() {
                 </Link>
                 <div className="flex items-center gap-4 p-2">
                   <a
-                    href="https://t.me/streamzy"
+                    href="https://www.whatsapp.com/channel/0029Vb6BA0LDDmFPwX1crg2h"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center h-10 w-10 rounded-lg hover:text-red-600 hover:bg-gray-800/50 transition-colors"
@@ -114,7 +114,7 @@ export default function Layout() {
                     <MessageCircle size={20} />
                   </a>
                   <a
-                    href="https://t.me/streamzy"
+                    href="https://www.whatsapp.com/channel/0029Vb6BA0LDDmFPwX1crg2h"
                     className="flex items-center justify-center h-10 w-10 rounded-lg hover:text-red-600 hover:bg-gray-800/50 transition-colors"
                   >
                     <Mail size={20} />
