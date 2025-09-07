@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getDetails, getSeasonDetails } from '../api/tmdb';
 import type { TVShowDetails } from '../types';
+import AdPopup from '../components/AdPopup'; // 👈 Import AdPopup
 
 const SERVERS = [
   {
@@ -36,21 +37,22 @@ export default function Watch() {
   const { type, id } = useParams();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  
+
   const [showServers, setShowServers] = useState(false);
   const [selectedServer, setSelectedServer] = useState(() => {
     const saved = localStorage.getItem('selected-server');
     return saved ? parseInt(saved) : 1;
   });
-  
+
   const [selectedSeason, setSelectedSeason] = useState(() => {
     return parseInt(searchParams.get('season') || '1');
   });
   const [selectedEpisode, setSelectedEpisode] = useState(() => {
     return parseInt(searchParams.get('episode') || '1');
   });
-  
+
   const [showEpisodes, setShowEpisodes] = useState(false);
+  const [showAd, setShowAd] = useState(true); // ✅ STATE popup iklan
 
   const { data: details } = useQuery({
     queryKey: ['details', type, id],
@@ -81,10 +83,20 @@ export default function Watch() {
   useEffect(() => {
     const season = parseInt(searchParams.get('season') || '1');
     const episode = parseInt(searchParams.get('episode') || '1');
-    
+
     setSelectedSeason(season);
     setSelectedEpisode(episode);
   }, [searchParams]);
+
+  // Auto-close popup setelah 7 detik
+  useEffect(() => {
+    if (showAd) {
+      const timer = setTimeout(() => {
+        setShowAd(false);
+      }, 7000); // 7 detik
+      return () => clearTimeout(timer);
+    }
+  }, [showAd]);
 
   const currentServer = SERVERS.flatMap(category => category.servers).find(s => s.id === selectedServer)!;
   const isTVShow = type === 'tv';
@@ -92,12 +104,9 @@ export default function Watch() {
 
   return (
     <div className="relative h-screen w-full bg-black">
+      {/* Tombol navigasi & server */}
       <div className="absolute top-2 sm:top-16 left-2 sm:left-4 z-50 flex flex-col gap-2">
-        <button
-          onClick={() => navigate('/')}
-          className="p-2 0 rounded-full text-white transition-colors"
-          aria-label="Go back"
-        >
+        <button onClick={() => navigate('/')} className="p-2 0 rounded-full text-white transition-colors" aria-label="Go back">
           <ArrowLeft size={24} />
         </button>
 
@@ -145,6 +154,7 @@ export default function Watch() {
         )}
       </div>
 
+      {/* Tombol Episode (jika TV Show) */}
       {isTVShow && tvDetails && (
         <div className="absolute top-2 sm:top-16 right-2 sm:right-4 z-50">
           <button
@@ -166,7 +176,7 @@ export default function Watch() {
                   onChange={(e) => {
                     const newSeason = Number(e.target.value);
                     setSelectedSeason(newSeason);
-                    setSelectedEpisode(1); // Reset episode when season changes
+                    setSelectedEpisode(1);
                   }}
                   className="w-full px-3 py-2 bg-gray-800 rounded-lg text-white mb-2"
                 >
@@ -204,11 +214,15 @@ export default function Watch() {
         </div>
       )}
 
+      {/* Player */}
       <iframe
         src={`${currentServer.url}/${type}/${id}${type === 'tv' ? `/${selectedSeason}/${selectedEpisode}` : ''}`}
         className="w-full h-full"
         allowFullScreen
       />
+
+      {/* 🎯 Popup Iklan */}
+      {showAd && <AdPopup onClose={() => setShowAd(false)} />}
     </div>
   );
 }
