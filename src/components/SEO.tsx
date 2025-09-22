@@ -13,8 +13,8 @@ interface SEOProps {
   };
 }
 
-const DEFAULT_TITLE = 'BAJAKFLIX - Nonton Film Bajakan Gratis';
-const DEFAULT_DESCRIPTION = 'Nonton gampang enjoy bosku.';
+const DEFAULT_TITLE = 'BajakFLIX - Watch Movies & TV Shows Online For free';
+const DEFAULT_DESCRIPTION = 'Watch any movies Tv Shows For free with BAJAKFLIX.';
 const DEFAULT_IMAGE = '/og-image.jpg';
 
 export default function SEO({
@@ -24,7 +24,7 @@ export default function SEO({
   type = 'website',
   video,
 }: SEOProps) {
-  const finalTitle = title ? `${title} - Bajakflix` : DEFAULT_TITLE;
+  const finalTitle = title ? `${title} - BAJAKFLIX` : DEFAULT_TITLE;
   const finalDescription = description || DEFAULT_DESCRIPTION;
   const finalImage = image ? getImageUrl(image) : DEFAULT_IMAGE;
 
