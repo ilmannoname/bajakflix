@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <title>BAJAKFLIX - Nonton Film Bajakan tanpa banyak iklan</title>
+    <title>STREAMZY - Watch Movies & TV Shows For free</title>
     <style>
       /* Popup Styling */
       .popup-overlay {
@@ -54,48 +54,18 @@
       .popup a:hover {
         background-color: #f40612;
       }
-
-      /* Styling untuk Banner Iklan */
-      .banner-iklan {
-        width: 100%;
-        background-color: #f7f7f7;
-        padding: 10px 0;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      .banner-iklan img {
-        width: 100%;
-        max-width: 1000px;
-        height: auto;
-      }
-
-      /* Optional: Make banner fixed on top of the page */
-      .banner-iklan.fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-      }
     </style>
   </head>
   <body>
-    <!-- Banner Iklan -->
-    <div class="banner-iklan">
-      <a href="https://link-iklan.com" target="_blank">
-        <img src="banner-iklan.jpg" alt="Banner Iklan" />
-      </a>
-    </div>
-
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
     <!-- Popup HTML -->
     <div class="popup-overlay">
       <div class="popup">
-        <h2>JOIN SALURAN BAJAKFLIX UNTUK INFORMASINYA</h2>
+        <h2>JOIN STREAMZY ANNOUNCEMENT CHANNELS</h2>
         <p>STREAMING WEBSITE WITH NO ANNOYING ADS</p>
-        <a href="https://whatsapp.com/channel/0029Vb6BA0LDDmFPwX1crg2h" target="_blank">Join Saluran</a>
+        <a href="https://t.me/streamzy" target="_blank">Join Telegram Channel</a>
       </div>
     </div>
 
@@ -103,7 +73,7 @@
       // Optional: Add JavaScript to close the popup after a few seconds
       setTimeout(() => {
         document.querySelector('.popup-overlay').style.display = 'none';
-      }, 4000); // Popup akan hilang setelah 4 detik
+      }, 4000); // Popup akan hilang setelah 10 detik
     </script>
   </body>
 </html>
