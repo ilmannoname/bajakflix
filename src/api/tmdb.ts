@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { MovieDetails, TVShowDetails, Season } from '../types';
 
-const TMDB_API_KEY = '8d6d91941230817f7807d643736e8a49';
+const TMDB_API_KEY = '77a35ff7fa52258bd97365ea39bb21f7';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 export const tmdbApi = axios.create({
